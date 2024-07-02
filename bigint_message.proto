@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.bloxroute.bsc.mev.relay.v1;
+
+option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
+
+// BigInt message containing a big integer value.
+message BigInt {
+    // The value of the big integer (.Bytes()).
+    bytes value = 1;
+}

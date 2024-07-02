@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.bloxroute.bsc.mev.relay.v1;
+
+option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
+
+// ConfigUpdatesRequest message containing the request for configuration updates.
+message ConfigUpdatesRequest {}
+
+// ConfigUpdatesResponse message containing the response to the configuration updates.
+message ConfigUpdatesResponse {
+  // The update to the validator or builder configuration.
+  oneof update {
+    // The validator configuration update.
+    ValidatorConfigUpdate validator = 1;
+    // The builder configuration update.
+    BuilderConfigUpdate builder = 2;
+  }
+}
+
+// Contains the current validator configurations.
+message ValidatorConfigUpdate {
+  // List of validator configuration records.
+  repeated ValidatorConfigRecord records = 1;
+}
+
+// Represents a validator configuration record.
+message ValidatorConfigRecord {
+  // Wallet address of the validator.
+  string validator_wallet_address = 1;
+  // The gas ceiling for the validator.
+  uint64 gas_ceil = 2;
+}
+
+// BuilderConfigUpdate message containing the builder configuration update.
+message BuilderConfigUpdate {
+  // Wallet address for payouts for MEV opportunities.
+  string payout_wallet_address = 1;
+}

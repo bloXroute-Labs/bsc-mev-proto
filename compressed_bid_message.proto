@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.bloxroute.bsc.mev.relay.v1;
+
+import "bigint_message.proto";
+import "compressed_hash_message.proto";
+import "compressed_tx_message.proto";
+
+option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
+
+// CompressedRawBid is a compressed representation of a raw bid.
+message CompressedRawBid {
+    // The block number of the bid.
+    uint64 block_number = 1;
+    // The hash of the parent block.
+    string parent_hash = 2;
+    // The transactions in the bid.
+    repeated CompressedTx txs = 3;
+    // The unRevertible hashes of the bid.
+    repeated CompressedHash unRevertible = 4;
+    // The gas used in the bid.
+    uint64 gas_used = 5;
+    // The gas fee in the bid.
+    BigInt gas_fee = 6;
+    // The builder fee in the bid.
+    BigInt builder_fee = 7;
+}

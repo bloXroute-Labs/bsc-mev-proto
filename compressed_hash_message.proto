@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.bloxroute.bsc.mev.relay.v1;
+
+option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
+
+// CompressedHash is a compressed transaction hash
+message CompressedHash {
+    // data is the compressed transaction hash data short id or raw hash
+    oneof data {
+        // sid is the short id of the transaction
+        uint32 sid = 1;
+        // raw is the raw transaction
+        bytes hash = 2;
+    }
+}
+

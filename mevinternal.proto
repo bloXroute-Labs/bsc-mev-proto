@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "forwarding_message.proto";
+
+package com.bloxroute.bsc.mev.relay.v1;
+
+option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
+
+// MevInternalService is the service that provides the ability to relay MEV transactions.
+service MevInternalService {
+    // Forward forwards a message to the next hop.
+  rpc Forward (stream ForwardMsg) returns (stream ForwardMsg);
+}

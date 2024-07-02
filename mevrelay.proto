@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "config_updates_message.proto";
+import "propose_block_message.proto";
+
+package com.bloxroute.bsc.mev.relay.v1;
+
+option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
+
+// The MevRelay service provides an interface for the MEV relay to propose new blocks to the network.
+service MevRelay {
+  // ProposeBlock is used to propose a new block to the network.
+  rpc ProposeBlock (stream ProposeBlockRequest) returns (stream ProposeBlockResponse);
+
+  // ConfigUpdates is used to receive updates to the validator and builder configurations.
+  rpc ConfigUpdates (ConfigUpdatesRequest) returns (stream ConfigUpdatesResponse);
+}

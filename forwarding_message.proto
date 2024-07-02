@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.bloxroute.bsc.mev.relay.v1;
+
+import "compressed_bid_message.proto";
+
+option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
+
+// ForwardRequest is the request to forward a bundle to a validator.
+message ForwardRequest {
+    // id is a unique identifier for the request.
+    string id = 1;
+    // The account ID of the builder.
+    string account_id = 2;
+    // validator is the validator to forward the bundle to.
+    string validator = 3;
+    // bundle_hashes is the hashes of the transactions in the bundle.
+    repeated bytes bundle_hashes = 4;
+    // The payment transaction for the bid.
+    bytes pay_bid_tx = 5;
+    // The gas used for the payment transaction.
+    uint64 pay_bid_tx_gas_used = 6;
+    // The raw bid.
+    CompressedRawBid raw_bid = 7;
+}
+
+// ForwardResponse is the response to a ForwardRequest.
+message ForwardResponse {}
+
+// ForwardMsg is the message to forward a bundle to a validator.
+message ForwardMsg {
+    // msg is the message to forward.
+    oneof msg {
+        // forward_request is the request to forward a bundle to a validator.
+        ForwardRequest forward_request = 1;
+        // forward_response is the response to a ForwardRequest.
+        ForwardResponse forward_response = 2;
+    }
+}
