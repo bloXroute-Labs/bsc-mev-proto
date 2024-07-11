@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package com.bloxroute.bsc.mev.relay.v1;
 
+import "hash_message.proto";
+
 option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
 
 // CompressedHash is a compressed transaction hash
@@ -11,7 +13,7 @@ message CompressedHash {
         // sid is the short id of the transaction
         uint32 sid = 1;
         // raw is the raw transaction
-        bytes hash = 2;
+        Hash hash = 2;
     }
 }
 

@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "bigint_message.proto";
+import "hash_message.proto";
 
 package com.bloxroute.bsc.mev.relay.v1;
 
@@ -11,15 +12,15 @@ message RawBid {
   // The block number of the bid.
   uint64 block_number = 1;
   // The hash of the parent block.
-  string parent_hash = 2;
+  Hash parent_hash = 2;
   // The transactions in the bid.
   repeated bytes txs = 3;
   // The gas used in the bid.
-  uint64 gas_used = 4;
+  BigInt gas_used = 4;
   // The gas fee in the bid.
   BigInt gas_fee = 5;
   // The builder fee in the bid.
   BigInt builder_fee = 6;
   // The unRevertible hashes of the bid.
-  repeated bytes un_revertible = 7;
+  Hashes un_revertible = 7;
 }

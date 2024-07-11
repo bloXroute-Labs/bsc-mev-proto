@@ -2,7 +2,9 @@ syntax = "proto3";
 
 package com.bloxroute.bsc.mev.relay.v1;
 
+import "bigint_message.proto";
 import "compressed_bid_message.proto";
+import "hash_message.proto";
 
 option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
 
@@ -15,11 +17,11 @@ message ForwardRequest {
     // validator is the validator to forward the bundle to.
     string validator = 3;
     // bundle_hashes is the hashes of the transactions in the bundle.
-    repeated bytes bundle_hashes = 4;
+    Hashes bundle_hashes = 4;
     // The payment transaction for the bid.
     bytes pay_bid_tx = 5;
     // The gas used for the payment transaction.
-    uint64 pay_bid_tx_gas_used = 6;
+    BigInt pay_bid_tx_gas_used = 6;
     // The raw bid.
     CompressedRawBid raw_bid = 7;
 }

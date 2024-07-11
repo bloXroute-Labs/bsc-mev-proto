@@ -1,7 +1,9 @@
 syntax = "proto3";
 
+import "bigint_message.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
+import "hash_message.proto";
 import "raw_bid_message.proto";
 
 package com.bloxroute.bsc.mev.relay.v1;
@@ -15,13 +17,13 @@ message ProposeBlockRequest {
   // The payment transaction for the bid.
   bytes pay_bid_tx = 2;
   // The gas used for the payment transaction.
-  uint64 pay_bid_tx_gas_used = 3;
+  BigInt pay_bid_tx_gas_used = 3;
   // The ID of the block proposal.
   string id = 4;
   // The validator wallet address.
   string validator = 5;
   // The hashes of the bundles in the block.
-  repeated bytes bundle_hashes = 6;
+  Hashes bundle_hashes = 6;
 }
 
 // ProposeBlockResponse message containing the response to the block proposal.
@@ -50,5 +52,5 @@ message ValidatorReply {
   // The reply to the block proposal.
   string reply = 6;
   // The timestamp of the reply.
-  int64 reply_timestamp = 7;
+  google.protobuf.Timestamp reply_timestamp = 7;
 }

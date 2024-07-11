@@ -3,7 +3,7 @@ module github.com/bloXroute-Labs/bsc-mev-proto/go
 go 1.21.5
 
 require (
-	github.com/ethereum/go-ethereum v1.14.6
+	github.com/ethereum/go-ethereum v1.13.14
 	github.com/stretchr/testify v1.9.0
 	google.golang.org/grpc v1.65.0
 	google.golang.org/protobuf v1.34.2

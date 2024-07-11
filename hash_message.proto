@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.bloxroute.bsc.mev.relay.v1;
+
+option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
+
+// Hash message containing eth common.Hash value.
+message Hash {
+    // The value of the big integer (.Bytes()).
+    bytes value = 1;
+}
+
+// Hashes message containing list of eth common.Hash value.
+message Hashes {
+    // The value of the big integer (.Bytes()).
+    repeated Hash value = 1;
+}
+
