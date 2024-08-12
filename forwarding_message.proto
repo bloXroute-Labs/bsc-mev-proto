@@ -5,6 +5,7 @@ package com.bloxroute.bsc.mev.relay.v1;
 import "bigint_message.proto";
 import "compressed_bid_message.proto";
 import "hash_message.proto";
+import "propose_block_message.proto";
 
 option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
 
@@ -27,15 +28,6 @@ message ForwardRequest {
 }
 
 // ForwardResponse is the response to a ForwardRequest.
-message ForwardResponse {}
-
-// ForwardMsg is the message to forward a bundle to a validator.
-message ForwardMsg {
-    // msg is the message to forward.
-    oneof msg {
-        // forward_request is the request to forward a bundle to a validator.
-        ForwardRequest forward_request = 1;
-        // forward_response is the response to a ForwardRequest.
-        ForwardResponse forward_response = 2;
-    }
+message ForwardResponse {
+    ProposeBlockResponse Response = 1;
 }

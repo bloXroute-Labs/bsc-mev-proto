@@ -8,6 +8,6 @@ option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
 
 // MevInternalService is the service that provides the ability to relay MEV transactions.
 service MevInternalService {
-    // Forward forwards a message to the next hop.
-  rpc Forward (stream ForwardMsg) returns (stream ForwardMsg);
+  // Forward forwards a message to the next hop.
+  rpc Forward (stream ForwardRequest) returns (stream ForwardResponse);
 }

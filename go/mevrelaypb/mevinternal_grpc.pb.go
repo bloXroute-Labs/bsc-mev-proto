@@ -40,8 +40,8 @@ func (c *mevInternalServiceClient) Forward(ctx context.Context, opts ...grpc.Cal
 }
 
 type MevInternalService_ForwardClient interface {
-	Send(*ForwardMsg) error
-	Recv() (*ForwardMsg, error)
+	Send(*ForwardRequest) error
+	Recv() (*ForwardResponse, error)
 	grpc.ClientStream
 }
 
@@ -49,12 +49,12 @@ type mevInternalServiceForwardClient struct {
 	grpc.ClientStream
 }
 
-func (x *mevInternalServiceForwardClient) Send(m *ForwardMsg) error {
+func (x *mevInternalServiceForwardClient) Send(m *ForwardRequest) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *mevInternalServiceForwardClient) Recv() (*ForwardMsg, error) {
-	m := new(ForwardMsg)
+func (x *mevInternalServiceForwardClient) Recv() (*ForwardResponse, error) {
+	m := new(ForwardResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
@@ -95,8 +95,8 @@ func _MevInternalService_Forward_Handler(srv interface{}, stream grpc.ServerStre
 }
 
 type MevInternalService_ForwardServer interface {
-	Send(*ForwardMsg) error
-	Recv() (*ForwardMsg, error)
+	Send(*ForwardResponse) error
+	Recv() (*ForwardRequest, error)
 	grpc.ServerStream
 }
 
@@ -104,12 +104,12 @@ type mevInternalServiceForwardServer struct {
 	grpc.ServerStream
 }
 
-func (x *mevInternalServiceForwardServer) Send(m *ForwardMsg) error {
+func (x *mevInternalServiceForwardServer) Send(m *ForwardResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *mevInternalServiceForwardServer) Recv() (*ForwardMsg, error) {
-	m := new(ForwardMsg)
+func (x *mevInternalServiceForwardServer) Recv() (*ForwardRequest, error) {
+	m := new(ForwardRequest)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
