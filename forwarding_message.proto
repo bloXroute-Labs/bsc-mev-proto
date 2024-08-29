@@ -6,6 +6,7 @@ import "bigint_message.proto";
 import "compressed_bid_message.proto";
 import "hash_message.proto";
 import "propose_block_message.proto";
+import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/mevrelaypb";
 
@@ -25,6 +26,8 @@ message ForwardRequest {
     BigInt pay_bid_tx_gas_used = 6;
     // The raw bid.
     CompressedRawBid raw_bid = 7;
+    // The time when the original proposal received at
+    google.protobuf.Timestamp origin_received_time = 8;
 }
 
 // ForwardResponse is the response to a ForwardRequest.
