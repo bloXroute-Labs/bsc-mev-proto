@@ -24,6 +24,8 @@ message ProposeBlockRequest {
   string validator = 5;
   // The hashes of the bundles in the block.
   Hashes bundle_hashes = 6;
+  // Bloxroute profit (optional)
+  BigInt bloxroute_profit = 7;
 }
 
 // ProposeBlockResponse message containing the response to the block proposal.
@@ -40,7 +42,16 @@ message ProposeBlockResponse {
     ValidatorReply validator_reply = 4;
     // The error message in case of an error.
     string error = 5;
+    // The update about a better bid arrival
+    BestBidUpdate best_bid = 6;
   }
+}
+
+message BestBidUpdate {
+  BigInt block_reward = 1;
+  google.protobuf.Timestamp received_time = 2;
+  uint64 block_number = 3;
+  BigInt bloxroute_profit = 4;
 }
 
 // ValidatorReply message containing details about the block proposal reception.
