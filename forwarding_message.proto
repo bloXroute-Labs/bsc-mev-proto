@@ -28,6 +28,8 @@ message ForwardRequest {
     CompressedRawBid raw_bid = 7;
     // The time when the original proposal received at
     google.protobuf.Timestamp origin_received_time = 8;
+    // sha256 hash from original transactions to control if they were encoded and decoded in the same order
+    bytes control_hash = 9;
 }
 
 // ForwardResponse is the response to a ForwardRequest.
