@@ -30,6 +30,8 @@ message ForwardRequest {
     google.protobuf.Timestamp origin_received_time = 8;
     // sha256 hash from original transactions to control if they were encoded and decoded in the same order
     bytes control_hash = 9;
+    // Bloxroute profit (optional)
+    BigInt bloxroute_profit = 10;
 }
 
 // ForwardResponse is the response to a ForwardRequest.
