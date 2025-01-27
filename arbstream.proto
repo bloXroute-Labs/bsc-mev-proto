@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package com.bloxroute.bsc.mev.arbstream;
+
+option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/arbstream";
+
+
+message Order {
+    repeated Transaction transactions = 1;
+    map<string, StateChange> state = 2; // State changes
+
+}
+
+message StateChange {
+    map<string, string> slots = 1; 
+}
+
+
+message Transaction {
+    string txHash = 1;
+    TxContents txContents = 2;
+    bool localRegion = 3;
+}
+
+message TxContents {
+    string from = 1;
+    string gas = 2;
+    string gasPrice = 3;
+    string hash = 4;
+    string input = 5;
+    string nonce = 6;
+    string value = 7;
+    string type = 8;
+    string to = 9;
+    string functionSelector = 10;
+    repeated Log logs = 11;
+}
+
+message Log {
+    string address = 1;
+    repeated string topics = 2;
+    string data = 3;
+}
+
+
+message StreamRequest {
+    string request_data = 1; // defaults to "all"
+}
+
+// gRPC service definition
+service ArbStreamServer {
+
+    rpc StreamArbData (StreamRequest) returns (stream Order); 
+}
+
