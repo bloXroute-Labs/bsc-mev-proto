@@ -7,7 +7,7 @@ option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/arbstream";
 
 message Order {
     repeated Transaction transactions = 1;
-    map<string, StateChange> state = 7; // State changes
+    map<string, StateChange> state = 2; // State changes
 
 }
 
