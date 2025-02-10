@@ -9,6 +9,7 @@ message Order {
     repeated Transaction transactions = 1;
     map<string, StateChange> state = 2; // State changes
     bool isArbTx = 3;
+    repeated string backrunmeConfig = 4;
 }
 
 message StateChange {
