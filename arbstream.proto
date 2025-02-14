@@ -46,6 +46,7 @@ message Log {
 
 message StreamRequest {
     string request_data = 1; // defaults to "all"
+    bool includeNonArbTx = 2; //defaults to false
 }
 
 // gRPC service definition
