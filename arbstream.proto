@@ -35,6 +35,8 @@ message TxContents {
     string to = 9;
     string functionSelector = 10;
     repeated Log logs = 11;
+    string gasTipCap = 12;
+    string gasFeeCap = 13;
 }
 
 message Log {
