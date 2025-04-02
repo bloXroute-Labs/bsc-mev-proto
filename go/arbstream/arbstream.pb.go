@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v5.29.3
-// source: arbstream/protobuf/arbstream.proto
+// source: arbstream.proto
 
 package arbstream
 
@@ -33,7 +33,7 @@ type Order struct {
 
 func (x *Order) Reset() {
 	*x = Order{}
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[0]
+	mi := &file_arbstream_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45,7 +45,7 @@ func (x *Order) String() string {
 func (*Order) ProtoMessage() {}
 
 func (x *Order) ProtoReflect() protoreflect.Message {
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[0]
+	mi := &file_arbstream_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +58,7 @@ func (x *Order) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Order.ProtoReflect.Descriptor instead.
 func (*Order) Descriptor() ([]byte, []int) {
-	return file_arbstream_protobuf_arbstream_proto_rawDescGZIP(), []int{0}
+	return file_arbstream_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Order) GetTransactions() []*Transaction {
@@ -98,7 +98,7 @@ type StateChange struct {
 
 func (x *StateChange) Reset() {
 	*x = StateChange{}
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[1]
+	mi := &file_arbstream_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -110,7 +110,7 @@ func (x *StateChange) String() string {
 func (*StateChange) ProtoMessage() {}
 
 func (x *StateChange) ProtoReflect() protoreflect.Message {
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[1]
+	mi := &file_arbstream_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *StateChange) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StateChange.ProtoReflect.Descriptor instead.
 func (*StateChange) Descriptor() ([]byte, []int) {
-	return file_arbstream_protobuf_arbstream_proto_rawDescGZIP(), []int{1}
+	return file_arbstream_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *StateChange) GetSlots() map[string]string {
@@ -144,7 +144,7 @@ type Transaction struct {
 
 func (x *Transaction) Reset() {
 	*x = Transaction{}
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[2]
+	mi := &file_arbstream_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -156,7 +156,7 @@ func (x *Transaction) String() string {
 func (*Transaction) ProtoMessage() {}
 
 func (x *Transaction) ProtoReflect() protoreflect.Message {
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[2]
+	mi := &file_arbstream_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *Transaction) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Transaction.ProtoReflect.Descriptor instead.
 func (*Transaction) Descriptor() ([]byte, []int) {
-	return file_arbstream_protobuf_arbstream_proto_rawDescGZIP(), []int{2}
+	return file_arbstream_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Transaction) GetTxHash() string {
@@ -214,7 +214,7 @@ type TxContents struct {
 
 func (x *TxContents) Reset() {
 	*x = TxContents{}
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[3]
+	mi := &file_arbstream_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -226,7 +226,7 @@ func (x *TxContents) String() string {
 func (*TxContents) ProtoMessage() {}
 
 func (x *TxContents) ProtoReflect() protoreflect.Message {
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[3]
+	mi := &file_arbstream_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -239,7 +239,7 @@ func (x *TxContents) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TxContents.ProtoReflect.Descriptor instead.
 func (*TxContents) Descriptor() ([]byte, []int) {
-	return file_arbstream_protobuf_arbstream_proto_rawDescGZIP(), []int{3}
+	return file_arbstream_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *TxContents) GetFrom() string {
@@ -344,7 +344,7 @@ type Log struct {
 
 func (x *Log) Reset() {
 	*x = Log{}
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[4]
+	mi := &file_arbstream_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -356,7 +356,7 @@ func (x *Log) String() string {
 func (*Log) ProtoMessage() {}
 
 func (x *Log) ProtoReflect() protoreflect.Message {
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[4]
+	mi := &file_arbstream_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -369,7 +369,7 @@ func (x *Log) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Log.ProtoReflect.Descriptor instead.
 func (*Log) Descriptor() ([]byte, []int) {
-	return file_arbstream_protobuf_arbstream_proto_rawDescGZIP(), []int{4}
+	return file_arbstream_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Log) GetAddress() string {
@@ -403,7 +403,7 @@ type StreamRequest struct {
 
 func (x *StreamRequest) Reset() {
 	*x = StreamRequest{}
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[5]
+	mi := &file_arbstream_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -415,7 +415,7 @@ func (x *StreamRequest) String() string {
 func (*StreamRequest) ProtoMessage() {}
 
 func (x *StreamRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_arbstream_protobuf_arbstream_proto_msgTypes[5]
+	mi := &file_arbstream_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -428,7 +428,7 @@ func (x *StreamRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamRequest.ProtoReflect.Descriptor instead.
 func (*StreamRequest) Descriptor() ([]byte, []int) {
-	return file_arbstream_protobuf_arbstream_proto_rawDescGZIP(), []int{5}
+	return file_arbstream_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *StreamRequest) GetRequestData() string {
@@ -506,29 +506,29 @@ func file_arbstream_protobuf_arbstream_proto_rawDescGZIP() []byte {
 	file_arbstream_protobuf_arbstream_proto_rawDescOnce.Do(func() {
 		file_arbstream_protobuf_arbstream_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_arbstream_protobuf_arbstream_proto_rawDesc), len(file_arbstream_protobuf_arbstream_proto_rawDesc)))
 	})
-	return file_arbstream_protobuf_arbstream_proto_rawDescData
+	return file_arbstream_proto_rawDescData
 }
 
-var file_arbstream_protobuf_arbstream_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
-var file_arbstream_protobuf_arbstream_proto_goTypes = []any{
-	(*Order)(nil),         // 0: arbstream.Order
-	(*StateChange)(nil),   // 1: arbstream.StateChange
-	(*Transaction)(nil),   // 2: arbstream.Transaction
-	(*TxContents)(nil),    // 3: arbstream.TxContents
-	(*Log)(nil),           // 4: arbstream.Log
-	(*StreamRequest)(nil), // 5: arbstream.StreamRequest
-	nil,                   // 6: arbstream.Order.StateEntry
-	nil,                   // 7: arbstream.StateChange.SlotsEntry
+var file_arbstream_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_arbstream_proto_goTypes = []any{
+	(*Order)(nil),         // 0: com.bloxroute.bsc.mev.arbstream.Order
+	(*StateChange)(nil),   // 1: com.bloxroute.bsc.mev.arbstream.StateChange
+	(*Transaction)(nil),   // 2: com.bloxroute.bsc.mev.arbstream.Transaction
+	(*TxContents)(nil),    // 3: com.bloxroute.bsc.mev.arbstream.TxContents
+	(*Log)(nil),           // 4: com.bloxroute.bsc.mev.arbstream.Log
+	(*StreamRequest)(nil), // 5: com.bloxroute.bsc.mev.arbstream.StreamRequest
+	nil,                   // 6: com.bloxroute.bsc.mev.arbstream.Order.StateEntry
+	nil,                   // 7: com.bloxroute.bsc.mev.arbstream.StateChange.SlotsEntry
 }
-var file_arbstream_protobuf_arbstream_proto_depIdxs = []int32{
-	2, // 0: arbstream.Order.transactions:type_name -> arbstream.Transaction
-	6, // 1: arbstream.Order.state:type_name -> arbstream.Order.StateEntry
-	7, // 2: arbstream.StateChange.slots:type_name -> arbstream.StateChange.SlotsEntry
-	3, // 3: arbstream.Transaction.txContents:type_name -> arbstream.TxContents
-	4, // 4: arbstream.TxContents.logs:type_name -> arbstream.Log
-	1, // 5: arbstream.Order.StateEntry.value:type_name -> arbstream.StateChange
-	5, // 6: arbstream.ArbStreamServer.StreamArbData:input_type -> arbstream.StreamRequest
-	0, // 7: arbstream.ArbStreamServer.StreamArbData:output_type -> arbstream.Order
+var file_arbstream_proto_depIdxs = []int32{
+	2, // 0: com.bloxroute.bsc.mev.arbstream.Order.transactions:type_name -> com.bloxroute.bsc.mev.arbstream.Transaction
+	6, // 1: com.bloxroute.bsc.mev.arbstream.Order.state:type_name -> com.bloxroute.bsc.mev.arbstream.Order.StateEntry
+	7, // 2: com.bloxroute.bsc.mev.arbstream.StateChange.slots:type_name -> com.bloxroute.bsc.mev.arbstream.StateChange.SlotsEntry
+	3, // 3: com.bloxroute.bsc.mev.arbstream.Transaction.txContents:type_name -> com.bloxroute.bsc.mev.arbstream.TxContents
+	4, // 4: com.bloxroute.bsc.mev.arbstream.TxContents.logs:type_name -> com.bloxroute.bsc.mev.arbstream.Log
+	1, // 5: com.bloxroute.bsc.mev.arbstream.Order.StateEntry.value:type_name -> com.bloxroute.bsc.mev.arbstream.StateChange
+	5, // 6: com.bloxroute.bsc.mev.arbstream.ArbStreamServer.StreamArbData:input_type -> com.bloxroute.bsc.mev.arbstream.StreamRequest
+	0, // 7: com.bloxroute.bsc.mev.arbstream.ArbStreamServer.StreamArbData:output_type -> com.bloxroute.bsc.mev.arbstream.Order
 	7, // [7:8] is the sub-list for method output_type
 	6, // [6:7] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name
@@ -536,9 +536,9 @@ var file_arbstream_protobuf_arbstream_proto_depIdxs = []int32{
 	0, // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_arbstream_protobuf_arbstream_proto_init() }
-func file_arbstream_protobuf_arbstream_proto_init() {
-	if File_arbstream_protobuf_arbstream_proto != nil {
+func init() { file_arbstream_proto_init() }
+func file_arbstream_proto_init() {
+	if File_arbstream_proto != nil {
 		return
 	}
 	type x struct{}
@@ -551,9 +551,9 @@ func file_arbstream_protobuf_arbstream_proto_init() {
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_arbstream_protobuf_arbstream_proto_goTypes,
-		DependencyIndexes: file_arbstream_protobuf_arbstream_proto_depIdxs,
-		MessageInfos:      file_arbstream_protobuf_arbstream_proto_msgTypes,
+		GoTypes:           file_arbstream_proto_goTypes,
+		DependencyIndexes: file_arbstream_proto_depIdxs,
+		MessageInfos:      file_arbstream_proto_msgTypes,
 	}.Build()
 	File_arbstream_protobuf_arbstream_proto = out.File
 	file_arbstream_protobuf_arbstream_proto_goTypes = nil
