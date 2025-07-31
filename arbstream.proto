@@ -10,6 +10,8 @@ message Order {
     map<string, StateChange> state = 2; // State changes
     bool isArbTx = 3;
     repeated string backrunmeConfig = 4;
+    string bundleHash = 5;
+
 }
 
 message StateChange {
