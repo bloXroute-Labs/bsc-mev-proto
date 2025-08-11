@@ -2,13 +2,12 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.29.3
-// source: arbstream/protobuf/arbstream.proto
+// source: arbstream.proto
 
 package arbstream
 
 import (
 	context "context"
-
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ArbStreamServer_StreamArbData_FullMethodName = "/arbstream.ArbStreamServer/StreamArbData"
+	ArbStreamServer_StreamArbData_FullMethodName = "/com.bloxroute.bsc.mev.arbstream.ArbStreamServer/StreamArbData"
 )
 
 // ArbStreamServerClient is the client API for ArbStreamServer service.
@@ -115,7 +114,7 @@ type ArbStreamServer_StreamArbDataServer = grpc.ServerStreamingServer[Order]
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ArbStreamServer_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "arbstream.ArbStreamServer",
+	ServiceName: "com.bloxroute.bsc.mev.arbstream.ArbStreamServer",
 	HandlerType: (*ArbStreamServerServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{
@@ -125,5 +124,5 @@ var ArbStreamServer_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "arbstream/protobuf/arbstream.proto",
+	Metadata: "arbstream.proto",
 }
