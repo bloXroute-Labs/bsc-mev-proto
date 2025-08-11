@@ -11,6 +11,8 @@ message Order {
     bool isArbTx = 3;
     repeated string backrunmeConfig = 4;
     string bundleHash = 5;
+    string accountId = 6;
+    string originHostName = 7;
 
 }
 
