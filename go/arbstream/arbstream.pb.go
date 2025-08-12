@@ -29,7 +29,7 @@ type Order struct {
 	BackrunmeConfig []string                `protobuf:"bytes,4,rep,name=backrunmeConfig,proto3" json:"backrunmeConfig,omitempty"`
 	BundleHash      string                  `protobuf:"bytes,5,opt,name=bundleHash,proto3" json:"bundleHash,omitempty"`
 	AccountId       string                  `protobuf:"bytes,6,opt,name=accountId,proto3" json:"accountId,omitempty"`
-	OriginHostName  string                  `protobuf:"bytes,7,opt,name=originHostName,proto3" json:"originHostName,omitempty"`
+	OriginHostname  string                  `protobuf:"bytes,7,opt,name=originHostname,proto3" json:"originHostname,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -106,9 +106,9 @@ func (x *Order) GetAccountId() string {
 	return ""
 }
 
-func (x *Order) GetOriginHostName() string {
+func (x *Order) GetOriginHostname() string {
 	if x != nil {
-		return x.OriginHostName
+		return x.OriginHostname
 	}
 	return ""
 }
@@ -483,7 +483,7 @@ const file_arbstream_proto_rawDesc = "" +
 	"bundleHash\x18\x05 \x01(\tR\n" +
 	"bundleHash\x12\x1c\n" +
 	"\taccountId\x18\x06 \x01(\tR\taccountId\x12&\n" +
-	"\x0eoriginHostName\x18\a \x01(\tR\x0eoriginHostName\x1af\n" +
+	"\x0eoriginHostname\x18\a \x01(\tR\x0eoriginHostname\x1af\n" +
 	"\n" +
 	"StateEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12B\n" +
