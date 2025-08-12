@@ -12,7 +12,7 @@ message Order {
     repeated string backrunmeConfig = 4;
     string bundleHash = 5;
     string accountId = 6;
-    string originHostName = 7;
+    string originHostname = 7;
 
 }
 
