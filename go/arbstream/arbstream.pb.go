@@ -7,12 +7,11 @@
 package arbstream
 
 import (
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
-
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -29,6 +28,8 @@ type Order struct {
 	IsArbTx         bool                    `protobuf:"varint,3,opt,name=isArbTx,proto3" json:"isArbTx,omitempty"`
 	BackrunmeConfig []string                `protobuf:"bytes,4,rep,name=backrunmeConfig,proto3" json:"backrunmeConfig,omitempty"`
 	BundleHash      string                  `protobuf:"bytes,5,opt,name=bundleHash,proto3" json:"bundleHash,omitempty"`
+	AccountId       string                  `protobuf:"bytes,6,opt,name=accountId,proto3" json:"accountId,omitempty"`
+	OriginHostname  string                  `protobuf:"bytes,7,opt,name=originHostname,proto3" json:"originHostname,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -94,6 +95,20 @@ func (x *Order) GetBackrunmeConfig() []string {
 func (x *Order) GetBundleHash() string {
 	if x != nil {
 		return x.BundleHash
+	}
+	return ""
+}
+
+func (x *Order) GetAccountId() string {
+	if x != nil {
+		return x.AccountId
+	}
+	return ""
+}
+
+func (x *Order) GetOriginHostname() string {
+	if x != nil {
+		return x.OriginHostname
 	}
 	return ""
 }
@@ -458,7 +473,7 @@ var File_arbstream_protobuf_arbstream_proto protoreflect.FileDescriptor
 
 const file_arbstream_protobuf_arbstream_proto_rawDesc = "" +
 	"\n" +
-	"\"arbstream/protobuf/arbstream.proto\x12\tarbstream\"\xac\x02\n" +
+	"\"arbstream/protobuf/arbstream.proto\x12\tarbstream\"\xf2\x02\n" +
 	"\x05Order\x12:\n" +
 	"\ftransactions\x18\x01 \x03(\v2\x16.arbstream.TransactionR\ftransactions\x121\n" +
 	"\x05state\x18\x02 \x03(\v2\x1b.arbstream.Order.StateEntryR\x05state\x12\x18\n" +
@@ -466,7 +481,9 @@ const file_arbstream_protobuf_arbstream_proto_rawDesc = "" +
 	"\x0fbackrunmeConfig\x18\x04 \x03(\tR\x0fbackrunmeConfig\x12\x1e\n" +
 	"\n" +
 	"bundleHash\x18\x05 \x01(\tR\n" +
-	"bundleHash\x1aP\n" +
+	"bundleHash\x12\x1c\n" +
+	"\taccountId\x18\x06 \x01(\tR\taccountId\x12&\n" +
+	"\x0eoriginHostname\x18\a \x01(\tR\x0eoriginHostname\x1aP\n" +
 	"\n" +
 	"StateEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12,\n" +

@@ -11,11 +11,13 @@ message Order {
     bool isArbTx = 3;
     repeated string backrunmeConfig = 4;
     string bundleHash = 5;
+    string accountId = 6;
+    string originHostname = 7;
 
 }
 
 message StateChange {
-    map<string, string> slots = 1; 
+    map<string, string> slots = 1;
 }
 
 
@@ -56,6 +58,6 @@ message StreamRequest {
 // gRPC service definition
 service ArbStreamServer {
 
-    rpc StreamArbData (StreamRequest) returns (stream Order); 
+    rpc StreamArbData (StreamRequest) returns (stream Order);
 }
 
