@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+package com.bloxroute.bsc.mev.blocktrace;
+
+option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/blocktrace";
+
+// Main Block
+message Block {
+  string hash = 1;
+  Header header = 2;
+  repeated ValidatorInfo future_validator_info = 3;
+  repeated Transaction transactions = 4;
+  repeated Withdrawal withdrawals = 5;
+  repeated string uncles = 6;
+}
+
+// Header
+message Header {
+  string parentHash = 1;
+  string sha3Uncles = 2;
+  string miner = 3;
+  string stateRoot = 4;
+  string transactionsRoot = 5;
+  string receiptsRoot = 6;
+  string logsBloom = 7;
+  string difficulty = 8;
+  string number = 9;
+  string gasLimit = 10;
+  string gasUsed = 11;
+  string timestamp = 12;
+  string extraData = 13;
+  string mixHash = 14;
+  string nonce = 15;
+  string blobGasUsed = 16;
+  string excessBlobGas = 17;
+  string parentBeaconBlockRoot = 18;
+}
+
+// Validator Info
+message ValidatorInfo {
+  uint64 block_height = 1;
+  string wallet_id = 2;
+  bool accessible = 3;
+}
+
+// Transaction
+message Transaction {
+  string from = 1;
+  string gas = 2;
+  string gasPrice = 3;
+  string hash = 4;
+  string input = 5;
+  string nonce = 6;
+  string value = 7;
+  string v = 8;
+  string r = 9;
+  string s = 10;
+  string to = 11;
+  int32 status = 12;
+  repeated Log logs = 13;
+  map<string, StateChange> stateDiff = 14; // State changes
+}
+
+message StateChange {
+    map<string, string> slots = 1; 
+}
+
+// Log
+message Log {
+  string address = 1;
+  repeated string topics = 2;
+  string data = 3;
+}
+
+
+
+// Withdrawal
+message Withdrawal {
+  string index = 1;
+  string validatorIndex = 2;
+  string address = 3;
+  string amount = 4;
+}
+
+
+message StreamRequest {
+    string request_data = 1; // defaults to "block_stream" 
+}
+
+// gRPC service definition
+service BlockTraceStreamServer {
+
+    rpc StreamBlockTraceData (StreamRequest) returns (stream Block); 
+}
