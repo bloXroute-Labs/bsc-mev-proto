@@ -22,16 +22,15 @@ const (
 )
 
 type Order struct {
-	state           protoimpl.MessageState  `protogen:"open.v1"`
-	Transactions    []*Transaction          `protobuf:"bytes,1,rep,name=transactions,proto3" json:"transactions,omitempty"`
-	State           map[string]*StateChange `protobuf:"bytes,2,rep,name=state,proto3" json:"state,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"` // State changes
-	IsArbTx         bool                    `protobuf:"varint,3,opt,name=isArbTx,proto3" json:"isArbTx,omitempty"`
-	BackrunmeConfig []string                `protobuf:"bytes,4,rep,name=backrunmeConfig,proto3" json:"backrunmeConfig,omitempty"`
-	BundleHash      string                  `protobuf:"bytes,5,opt,name=bundleHash,proto3" json:"bundleHash,omitempty"`
-	AccountId       string                  `protobuf:"bytes,6,opt,name=accountId,proto3" json:"accountId,omitempty"`
-	OriginHostname  string                  `protobuf:"bytes,7,opt,name=originHostname,proto3" json:"originHostname,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state          protoimpl.MessageState  `protogen:"open.v1"`
+	Transactions   []*Transaction          `protobuf:"bytes,1,rep,name=transactions,proto3" json:"transactions,omitempty"`
+	State          map[string]*StateChange `protobuf:"bytes,2,rep,name=state,proto3" json:"state,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"` // State changes
+	IsArbTx        bool                    `protobuf:"varint,3,opt,name=isArbTx,proto3" json:"isArbTx,omitempty"`
+	BundleHash     string                  `protobuf:"bytes,4,opt,name=bundleHash,proto3" json:"bundleHash,omitempty"`
+	AccountId      string                  `protobuf:"bytes,5,opt,name=accountId,proto3" json:"accountId,omitempty"`
+	OriginHostname string                  `protobuf:"bytes,6,opt,name=originHostname,proto3" json:"originHostname,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *Order) Reset() {
@@ -83,13 +82,6 @@ func (x *Order) GetIsArbTx() bool {
 		return x.IsArbTx
 	}
 	return false
-}
-
-func (x *Order) GetBackrunmeConfig() []string {
-	if x != nil {
-		return x.BackrunmeConfig
-	}
-	return nil
 }
 
 func (x *Order) GetBundleHash() string {
@@ -473,17 +465,16 @@ var File_arbstream_protobuf_arbstream_proto protoreflect.FileDescriptor
 
 const file_arbstream_protobuf_arbstream_proto_rawDesc = "" +
 	"\n" +
-	"\"arbstream/protobuf/arbstream.proto\x12\tarbstream\"\xf2\x02\n" +
+	"\"arbstream/protobuf/arbstream.proto\x12\tarbstream\"\xc8\x02\n" +
 	"\x05Order\x12:\n" +
 	"\ftransactions\x18\x01 \x03(\v2\x16.arbstream.TransactionR\ftransactions\x121\n" +
 	"\x05state\x18\x02 \x03(\v2\x1b.arbstream.Order.StateEntryR\x05state\x12\x18\n" +
-	"\aisArbTx\x18\x03 \x01(\bR\aisArbTx\x12(\n" +
-	"\x0fbackrunmeConfig\x18\x04 \x03(\tR\x0fbackrunmeConfig\x12\x1e\n" +
+	"\aisArbTx\x18\x03 \x01(\bR\aisArbTx\x12\x1e\n" +
 	"\n" +
-	"bundleHash\x18\x05 \x01(\tR\n" +
+	"bundleHash\x18\x04 \x01(\tR\n" +
 	"bundleHash\x12\x1c\n" +
-	"\taccountId\x18\x06 \x01(\tR\taccountId\x12&\n" +
-	"\x0eoriginHostname\x18\a \x01(\tR\x0eoriginHostname\x1aP\n" +
+	"\taccountId\x18\x05 \x01(\tR\taccountId\x12&\n" +
+	"\x0eoriginHostname\x18\x06 \x01(\tR\x0eoriginHostname\x1aP\n" +
 	"\n" +
 	"StateEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12,\n" +
