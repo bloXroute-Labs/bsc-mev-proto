@@ -13,6 +13,8 @@ message Order {
     string bundleHash = 5;
     string accountId = 6;
     string originHostname = 7;
+    repeated string rawTransactions = 8;
+    uint64 max_block_number = 9;
 
 }
 

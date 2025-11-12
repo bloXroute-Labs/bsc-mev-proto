@@ -30,6 +30,8 @@ type Order struct {
 	BundleHash      string                  `protobuf:"bytes,5,opt,name=bundleHash,proto3" json:"bundleHash,omitempty"`
 	AccountId       string                  `protobuf:"bytes,6,opt,name=accountId,proto3" json:"accountId,omitempty"`
 	OriginHostname  string                  `protobuf:"bytes,7,opt,name=originHostname,proto3" json:"originHostname,omitempty"`
+	RawTransactions []string                `protobuf:"bytes,8,rep,name=rawTransactions,proto3" json:"rawTransactions,omitempty"`
+	MaxBlockNumber  uint64                  `protobuf:"varint,9,opt,name=maxBlockNumber,proto3" json:"maxBlockNumber,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -111,6 +113,20 @@ func (x *Order) GetOriginHostname() string {
 		return x.OriginHostname
 	}
 	return ""
+}
+
+func (x *Order) GetRawTransactions() []string {
+	if x != nil {
+		return x.RawTransactions
+	}
+	return nil
+}
+
+func (x *Order) GetMaxBlockNumber() uint64 {
+	if x != nil {
+		return x.MaxBlockNumber
+	}
+	return 0
 }
 
 type StateChange struct {
@@ -473,7 +489,7 @@ var File_arbstream_protobuf_arbstream_proto protoreflect.FileDescriptor
 
 const file_arbstream_protobuf_arbstream_proto_rawDesc = "" +
 	"\n" +
-	"\"arbstream/protobuf/arbstream.proto\x12\tarbstream\"\xf2\x02\n" +
+	"\"arbstream/protobuf/arbstream.proto\x12\tarbstream\"\xc4\x03\n" +
 	"\x05Order\x12:\n" +
 	"\ftransactions\x18\x01 \x03(\v2\x16.arbstream.TransactionR\ftransactions\x121\n" +
 	"\x05state\x18\x02 \x03(\v2\x1b.arbstream.Order.StateEntryR\x05state\x12\x18\n" +
@@ -483,7 +499,9 @@ const file_arbstream_protobuf_arbstream_proto_rawDesc = "" +
 	"bundleHash\x18\x05 \x01(\tR\n" +
 	"bundleHash\x12\x1c\n" +
 	"\taccountId\x18\x06 \x01(\tR\taccountId\x12&\n" +
-	"\x0eoriginHostname\x18\a \x01(\tR\x0eoriginHostname\x1aP\n" +
+	"\x0eoriginHostname\x18\a \x01(\tR\x0eoriginHostname\x12(\n" +
+	"\x0frawTransactions\x18\b \x03(\tR\x0frawTransactions\x12&\n" +
+	"\x0emaxBlockNumber\x18\t \x01(\x04R\x0emaxBlockNumber\x1aP\n" +
 	"\n" +
 	"StateEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12,\n" +
