@@ -489,10 +489,10 @@ var File_arbstream_proto protoreflect.FileDescriptor
 
 const file_arbstream_proto_rawDesc = "" +
 	"\n" +
-	"\x0farbstream.proto\x12\x1fcom.bloxroute.bsc.mev.arbstream\"\x88\x04\n" +
-	"\x05Order\x12P\n" +
-	"\ftransactions\x18\x01 \x03(\v2,.com.bloxroute.bsc.mev.arbstream.TransactionR\ftransactions\x12G\n" +
-	"\x05state\x18\x02 \x03(\v21.com.bloxroute.bsc.mev.arbstream.Order.StateEntryR\x05state\x12\x18\n" +
+	"\x0farbstream.proto\x12\tarbstream\"\xc6\x03\n" +
+	"\x05Order\x12:\n" +
+	"\ftransactions\x18\x01 \x03(\v2\x16.arbstream.TransactionR\ftransactions\x121\n" +
+	"\x05state\x18\x02 \x03(\v2\x1b.arbstream.Order.StateEntryR\x05state\x12\x18\n" +
 	"\aisArbTx\x18\x03 \x01(\bR\aisArbTx\x12(\n" +
 	"\x0fbackrunmeConfig\x18\x04 \x03(\tR\x0fbackrunmeConfig\x12\x1e\n" +
 	"\n" +
@@ -501,23 +501,23 @@ const file_arbstream_proto_rawDesc = "" +
 	"\taccountId\x18\x06 \x01(\tR\taccountId\x12&\n" +
 	"\x0eoriginHostname\x18\a \x01(\tR\x0eoriginHostname\x12(\n" +
 	"\x0frawTransactions\x18\b \x03(\tR\x0frawTransactions\x12(\n" +
-	"\x10max_block_number\x18\t \x01(\x04R\x0emaxBlockNumber\x1af\n" +
+	"\x10max_block_number\x18\t \x01(\x04R\x0emaxBlockNumber\x1aP\n" +
 	"\n" +
 	"StateEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12B\n" +
-	"\x05value\x18\x02 \x01(\v2,.com.bloxroute.bsc.mev.arbstream.StateChangeR\x05value:\x028\x01\"\x96\x01\n" +
-	"\vStateChange\x12M\n" +
-	"\x05slots\x18\x01 \x03(\v27.com.bloxroute.bsc.mev.arbstream.StateChange.SlotsEntryR\x05slots\x1a8\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12,\n" +
+	"\x05value\x18\x02 \x01(\v2\x16.arbstream.StateChangeR\x05value:\x028\x01\"\x80\x01\n" +
+	"\vStateChange\x127\n" +
+	"\x05slots\x18\x01 \x03(\v2!.arbstream.StateChange.SlotsEntryR\x05slots\x1a8\n" +
 	"\n" +
 	"SlotsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x94\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"~\n" +
 	"\vTransaction\x12\x16\n" +
-	"\x06txHash\x18\x01 \x01(\tR\x06txHash\x12K\n" +
+	"\x06txHash\x18\x01 \x01(\tR\x06txHash\x125\n" +
 	"\n" +
-	"txContents\x18\x02 \x01(\v2+.com.bloxroute.bsc.mev.arbstream.TxContentsR\n" +
+	"txContents\x18\x02 \x01(\v2\x15.arbstream.TxContentsR\n" +
 	"txContents\x12 \n" +
-	"\vlocalRegion\x18\x03 \x01(\bR\vlocalRegion\"\xea\x02\n" +
+	"\vlocalRegion\x18\x03 \x01(\bR\vlocalRegion\"\xd4\x02\n" +
 	"\n" +
 	"TxContents\x12\x12\n" +
 	"\x04from\x18\x01 \x01(\tR\x04from\x12\x10\n" +
@@ -530,8 +530,8 @@ const file_arbstream_proto_rawDesc = "" +
 	"\x04type\x18\b \x01(\tR\x04type\x12\x0e\n" +
 	"\x02to\x18\t \x01(\tR\x02to\x12*\n" +
 	"\x10functionSelector\x18\n" +
-	" \x01(\tR\x10functionSelector\x128\n" +
-	"\x04logs\x18\v \x03(\v2$.com.bloxroute.bsc.mev.arbstream.LogR\x04logs\x12\x1c\n" +
+	" \x01(\tR\x10functionSelector\x12\"\n" +
+	"\x04logs\x18\v \x03(\v2\x0e.arbstream.LogR\x04logs\x12\x1c\n" +
 	"\tgasTipCap\x18\f \x01(\tR\tgasTipCap\x12\x1c\n" +
 	"\tgasFeeCap\x18\r \x01(\tR\tgasFeeCap\"K\n" +
 	"\x03Log\x12\x18\n" +
@@ -540,9 +540,9 @@ const file_arbstream_proto_rawDesc = "" +
 	"\x04data\x18\x03 \x01(\tR\x04data\"\\\n" +
 	"\rStreamRequest\x12!\n" +
 	"\frequest_data\x18\x01 \x01(\tR\vrequestData\x12(\n" +
-	"\x0fincludeNonArbTx\x18\x02 \x01(\bR\x0fincludeNonArbTx2|\n" +
-	"\x0fArbStreamServer\x12i\n" +
-	"\rStreamArbData\x12..com.bloxroute.bsc.mev.arbstream.StreamRequest\x1a&.com.bloxroute.bsc.mev.arbstream.Order0\x01B6Z4github.com/bloXroute-Labs/bsc-mev-proto/go/arbstreamb\x06proto3"
+	"\x0fincludeNonArbTx\x18\x02 \x01(\bR\x0fincludeNonArbTx2P\n" +
+	"\x0fArbStreamServer\x12=\n" +
+	"\rStreamArbData\x12\x18.arbstream.StreamRequest\x1a\x10.arbstream.Order0\x01B6Z4github.com/bloXroute-Labs/bsc-mev-proto/go/arbstreamb\x06proto3"
 
 var (
 	file_arbstream_proto_rawDescOnce sync.Once
@@ -558,24 +558,24 @@ func file_arbstream_proto_rawDescGZIP() []byte {
 
 var file_arbstream_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_arbstream_proto_goTypes = []any{
-	(*Order)(nil),         // 0: com.bloxroute.bsc.mev.arbstream.Order
-	(*StateChange)(nil),   // 1: com.bloxroute.bsc.mev.arbstream.StateChange
-	(*Transaction)(nil),   // 2: com.bloxroute.bsc.mev.arbstream.Transaction
-	(*TxContents)(nil),    // 3: com.bloxroute.bsc.mev.arbstream.TxContents
-	(*Log)(nil),           // 4: com.bloxroute.bsc.mev.arbstream.Log
-	(*StreamRequest)(nil), // 5: com.bloxroute.bsc.mev.arbstream.StreamRequest
-	nil,                   // 6: com.bloxroute.bsc.mev.arbstream.Order.StateEntry
-	nil,                   // 7: com.bloxroute.bsc.mev.arbstream.StateChange.SlotsEntry
+	(*Order)(nil),         // 0: arbstream.Order
+	(*StateChange)(nil),   // 1: arbstream.StateChange
+	(*Transaction)(nil),   // 2: arbstream.Transaction
+	(*TxContents)(nil),    // 3: arbstream.TxContents
+	(*Log)(nil),           // 4: arbstream.Log
+	(*StreamRequest)(nil), // 5: arbstream.StreamRequest
+	nil,                   // 6: arbstream.Order.StateEntry
+	nil,                   // 7: arbstream.StateChange.SlotsEntry
 }
 var file_arbstream_proto_depIdxs = []int32{
-	2, // 0: com.bloxroute.bsc.mev.arbstream.Order.transactions:type_name -> com.bloxroute.bsc.mev.arbstream.Transaction
-	6, // 1: com.bloxroute.bsc.mev.arbstream.Order.state:type_name -> com.bloxroute.bsc.mev.arbstream.Order.StateEntry
-	7, // 2: com.bloxroute.bsc.mev.arbstream.StateChange.slots:type_name -> com.bloxroute.bsc.mev.arbstream.StateChange.SlotsEntry
-	3, // 3: com.bloxroute.bsc.mev.arbstream.Transaction.txContents:type_name -> com.bloxroute.bsc.mev.arbstream.TxContents
-	4, // 4: com.bloxroute.bsc.mev.arbstream.TxContents.logs:type_name -> com.bloxroute.bsc.mev.arbstream.Log
-	1, // 5: com.bloxroute.bsc.mev.arbstream.Order.StateEntry.value:type_name -> com.bloxroute.bsc.mev.arbstream.StateChange
-	5, // 6: com.bloxroute.bsc.mev.arbstream.ArbStreamServer.StreamArbData:input_type -> com.bloxroute.bsc.mev.arbstream.StreamRequest
-	0, // 7: com.bloxroute.bsc.mev.arbstream.ArbStreamServer.StreamArbData:output_type -> com.bloxroute.bsc.mev.arbstream.Order
+	2, // 0: arbstream.Order.transactions:type_name -> arbstream.Transaction
+	6, // 1: arbstream.Order.state:type_name -> arbstream.Order.StateEntry
+	7, // 2: arbstream.StateChange.slots:type_name -> arbstream.StateChange.SlotsEntry
+	3, // 3: arbstream.Transaction.txContents:type_name -> arbstream.TxContents
+	4, // 4: arbstream.TxContents.logs:type_name -> arbstream.Log
+	1, // 5: arbstream.Order.StateEntry.value:type_name -> arbstream.StateChange
+	5, // 6: arbstream.ArbStreamServer.StreamArbData:input_type -> arbstream.StreamRequest
+	0, // 7: arbstream.ArbStreamServer.StreamArbData:output_type -> arbstream.Order
 	7, // [7:8] is the sub-list for method output_type
 	6, // [6:7] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name
