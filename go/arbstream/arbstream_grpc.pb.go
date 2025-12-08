@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.29.3
-// source: arbstream/protobuf/arbstream.proto
+// source: arbstream.proto
 
 package arbstream
 
@@ -124,5 +124,5 @@ var ArbStreamServer_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "arbstream/protobuf/arbstream.proto",
+	Metadata: "arbstream.proto",
 }

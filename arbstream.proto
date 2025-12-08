@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package com.bloxroute.bsc.mev.arbstream;
+package arbstream;
 
 option go_package = "github.com/bloXroute-Labs/bsc-mev-proto/go/arbstream";
 
