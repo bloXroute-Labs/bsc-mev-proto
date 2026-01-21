@@ -15,7 +15,8 @@ message Order {
     string originHostname = 7;
     repeated string rawTransactions = 8;
     uint64 max_block_number = 9;
-    string backrunmeRewardAddress = 10;
+    uint64 nextBlockNumber = 10;
+    string backrunmeRewardAddress = 11;
 }
 
 message StateChange {
