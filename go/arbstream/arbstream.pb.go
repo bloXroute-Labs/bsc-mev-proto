@@ -31,7 +31,7 @@ type Order struct {
 	AccountId              string                  `protobuf:"bytes,6,opt,name=accountId,proto3" json:"accountId,omitempty"`
 	OriginHostname         string                  `protobuf:"bytes,7,opt,name=originHostname,proto3" json:"originHostname,omitempty"`
 	RawTransactions        []string                `protobuf:"bytes,8,rep,name=rawTransactions,proto3" json:"rawTransactions,omitempty"`
-	MaxBlockNumber         uint64                  `protobuf:"varint,9,opt,name=max_block_number,json=maxBlockNumber,proto3" json:"max_block_number,omitempty"`
+	MaxBlockNumber         uint64                  `protobuf:"varint,9,opt,name=maxBlockNumber,proto3" json:"maxBlockNumber,omitempty"`
 	NextBlockNumber        uint64                  `protobuf:"varint,10,opt,name=nextBlockNumber,proto3" json:"nextBlockNumber,omitempty"`
 	BackrunmeRewardAddress string                  `protobuf:"bytes,11,opt,name=backrunmeRewardAddress,proto3" json:"backrunmeRewardAddress,omitempty"`
 	unknownFields          protoimpl.UnknownFields
@@ -505,7 +505,7 @@ var File_arbstream_proto protoreflect.FileDescriptor
 
 const file_arbstream_proto_rawDesc = "" +
 	"\n" +
-	"\x0farbstream.proto\x12\tarbstream\"\xa8\x04\n" +
+	"\x0farbstream.proto\x12\tarbstream\"\xa6\x04\n" +
 	"\x05Order\x12:\n" +
 	"\ftransactions\x18\x01 \x03(\v2\x16.arbstream.TransactionR\ftransactions\x121\n" +
 	"\x05state\x18\x02 \x03(\v2\x1b.arbstream.Order.StateEntryR\x05state\x12\x18\n" +
@@ -516,8 +516,8 @@ const file_arbstream_proto_rawDesc = "" +
 	"bundleHash\x12\x1c\n" +
 	"\taccountId\x18\x06 \x01(\tR\taccountId\x12&\n" +
 	"\x0eoriginHostname\x18\a \x01(\tR\x0eoriginHostname\x12(\n" +
-	"\x0frawTransactions\x18\b \x03(\tR\x0frawTransactions\x12(\n" +
-	"\x10max_block_number\x18\t \x01(\x04R\x0emaxBlockNumber\x12(\n" +
+	"\x0frawTransactions\x18\b \x03(\tR\x0frawTransactions\x12&\n" +
+	"\x0emaxBlockNumber\x18\t \x01(\x04R\x0emaxBlockNumber\x12(\n" +
 	"\x0fnextBlockNumber\x18\n" +
 	" \x01(\x04R\x0fnextBlockNumber\x126\n" +
 	"\x16backrunmeRewardAddress\x18\v \x01(\tR\x16backrunmeRewardAddress\x1aP\n" +
