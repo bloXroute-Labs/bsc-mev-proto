@@ -34,6 +34,7 @@ type Order struct {
 	MaxBlockNumber         uint64                  `protobuf:"varint,9,opt,name=maxBlockNumber,proto3" json:"maxBlockNumber,omitempty"`
 	NextBlockNumber        uint64                  `protobuf:"varint,10,opt,name=nextBlockNumber,proto3" json:"nextBlockNumber,omitempty"`
 	BackrunmeRewardAddress string                  `protobuf:"bytes,11,opt,name=backrunmeRewardAddress,proto3" json:"backrunmeRewardAddress,omitempty"`
+	RequestedMevBuilders   map[string]string       `protobuf:"bytes,12,rep,name=requestedMevBuilders,proto3" json:"requestedMevBuilders,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -143,6 +144,13 @@ func (x *Order) GetBackrunmeRewardAddress() string {
 		return x.BackrunmeRewardAddress
 	}
 	return ""
+}
+
+func (x *Order) GetRequestedMevBuilders() map[string]string {
+	if x != nil {
+		return x.RequestedMevBuilders
+	}
+	return nil
 }
 
 type StateChange struct {
@@ -505,7 +513,7 @@ var File_arbstream_proto protoreflect.FileDescriptor
 
 const file_arbstream_proto_rawDesc = "" +
 	"\n" +
-	"\x0farbstream.proto\x12\tarbstream\"\xa6\x04\n" +
+	"\x0farbstream.proto\x12\tarbstream\"\xcf\x05\n" +
 	"\x05Order\x12:\n" +
 	"\ftransactions\x18\x01 \x03(\v2\x16.arbstream.TransactionR\ftransactions\x121\n" +
 	"\x05state\x18\x02 \x03(\v2\x1b.arbstream.Order.StateEntryR\x05state\x12\x18\n" +
@@ -520,11 +528,15 @@ const file_arbstream_proto_rawDesc = "" +
 	"\x0emaxBlockNumber\x18\t \x01(\x04R\x0emaxBlockNumber\x12(\n" +
 	"\x0fnextBlockNumber\x18\n" +
 	" \x01(\x04R\x0fnextBlockNumber\x126\n" +
-	"\x16backrunmeRewardAddress\x18\v \x01(\tR\x16backrunmeRewardAddress\x1aP\n" +
+	"\x16backrunmeRewardAddress\x18\v \x01(\tR\x16backrunmeRewardAddress\x12^\n" +
+	"\x14requestedMevBuilders\x18\f \x03(\v2*.arbstream.Order.RequestedMevBuildersEntryR\x14requestedMevBuilders\x1aP\n" +
 	"\n" +
 	"StateEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12,\n" +
-	"\x05value\x18\x02 \x01(\v2\x16.arbstream.StateChangeR\x05value:\x028\x01\"\x80\x01\n" +
+	"\x05value\x18\x02 \x01(\v2\x16.arbstream.StateChangeR\x05value:\x028\x01\x1aG\n" +
+	"\x19RequestedMevBuildersEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x80\x01\n" +
 	"\vStateChange\x127\n" +
 	"\x05slots\x18\x01 \x03(\v2!.arbstream.StateChange.SlotsEntryR\x05slots\x1a8\n" +
 	"\n" +
@@ -575,7 +587,7 @@ func file_arbstream_proto_rawDescGZIP() []byte {
 	return file_arbstream_proto_rawDescData
 }
 
-var file_arbstream_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_arbstream_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_arbstream_proto_goTypes = []any{
 	(*Order)(nil),         // 0: arbstream.Order
 	(*StateChange)(nil),   // 1: arbstream.StateChange
@@ -584,22 +596,24 @@ var file_arbstream_proto_goTypes = []any{
 	(*Log)(nil),           // 4: arbstream.Log
 	(*StreamRequest)(nil), // 5: arbstream.StreamRequest
 	nil,                   // 6: arbstream.Order.StateEntry
-	nil,                   // 7: arbstream.StateChange.SlotsEntry
+	nil,                   // 7: arbstream.Order.RequestedMevBuildersEntry
+	nil,                   // 8: arbstream.StateChange.SlotsEntry
 }
 var file_arbstream_proto_depIdxs = []int32{
 	2, // 0: arbstream.Order.transactions:type_name -> arbstream.Transaction
 	6, // 1: arbstream.Order.state:type_name -> arbstream.Order.StateEntry
-	7, // 2: arbstream.StateChange.slots:type_name -> arbstream.StateChange.SlotsEntry
-	3, // 3: arbstream.Transaction.txContents:type_name -> arbstream.TxContents
-	4, // 4: arbstream.TxContents.logs:type_name -> arbstream.Log
-	1, // 5: arbstream.Order.StateEntry.value:type_name -> arbstream.StateChange
-	5, // 6: arbstream.ArbStreamServer.StreamArbData:input_type -> arbstream.StreamRequest
-	0, // 7: arbstream.ArbStreamServer.StreamArbData:output_type -> arbstream.Order
-	7, // [7:8] is the sub-list for method output_type
-	6, // [6:7] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	7, // 2: arbstream.Order.requestedMevBuilders:type_name -> arbstream.Order.RequestedMevBuildersEntry
+	8, // 3: arbstream.StateChange.slots:type_name -> arbstream.StateChange.SlotsEntry
+	3, // 4: arbstream.Transaction.txContents:type_name -> arbstream.TxContents
+	4, // 5: arbstream.TxContents.logs:type_name -> arbstream.Log
+	1, // 6: arbstream.Order.StateEntry.value:type_name -> arbstream.StateChange
+	5, // 7: arbstream.ArbStreamServer.StreamArbData:input_type -> arbstream.StreamRequest
+	0, // 8: arbstream.ArbStreamServer.StreamArbData:output_type -> arbstream.Order
+	8, // [8:9] is the sub-list for method output_type
+	7, // [7:8] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_arbstream_proto_init() }
@@ -613,7 +627,7 @@ func file_arbstream_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_arbstream_proto_rawDesc), len(file_arbstream_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
