@@ -17,6 +17,7 @@ message Order {
     uint64 maxBlockNumber = 9;
     uint64 nextBlockNumber = 10;
     string backrunmeRewardAddress = 11;
+    map<string, string> requestedMevBuilders = 12;
 }
 
 message StateChange {
